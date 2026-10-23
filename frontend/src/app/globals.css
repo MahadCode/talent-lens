@@ -1,1 +1,116 @@
-body{font-family:system-ui,sans-serif;margin:0}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Paper-white hiring UI, adapted from the Nova Agent visual language:
+  warm ground, mono labels, orange→pink brand stroke.
+  #efece6 background  #141414 ink  #ff8a3d / #ff5a5f / #ff3d8b brand
+*/
+
+:root {
+  --background: 40 23% 92%;
+  --surface: 40 33% 96%;
+  --card: 40 40% 97%;
+
+  --primary: 24 100% 62%;
+  --primary-foreground: 0 0% 8%;
+  --secondary: 358 100% 68%;
+  --secondary-foreground: 0 0% 8%;
+  --accent: 333 100% 62%;
+  --accent-foreground: 0 0% 100%;
+
+  --heading: 0 0% 8%;
+  --muted: 40 18% 88%;
+  --muted-foreground: 0 0% 8%;
+  --border: 0 0% 8%;
+
+  --success: 142 40% 32%;
+  --warning: 32 100% 42%;
+  --error: 358 80% 48%;
+
+  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.dark {
+  --background: 30 8% 8%;
+  --surface: 30 8% 11%;
+  --card: 30 8% 12%;
+
+  --primary: 24 100% 64%;
+  --primary-foreground: 0 0% 8%;
+  --secondary: 358 100% 70%;
+  --secondary-foreground: 0 0% 8%;
+  --accent: 333 100% 66%;
+  --accent-foreground: 0 0% 8%;
+
+  --heading: 40 23% 92%;
+  --muted: 30 8% 16%;
+  --muted-foreground: 40 10% 72%;
+  --border: 40 10% 22%;
+
+  --success: 142 40% 48%;
+  --warning: 32 100% 56%;
+  --error: 358 80% 62%;
+}
+
+* {
+  border-color: hsl(var(--border) / 0.12);
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--heading));
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border) / 0.18);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--border) / 0.35);
+}
+
+:focus-visible {
+  outline: 1px solid hsl(var(--primary));
+  outline-offset: 3px;
+}
+
+.glass-panel {
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--border) / 0.12);
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--border) / 0.08) 37%,
+    hsl(var(--muted)) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+
+.label-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.gradient-stroke {
+  background: conic-gradient(from 200deg, #ffb347, #ff8a3d 18%, #ff5a5f 34%, #ff3d8b 50%, #ff5a5f 66%, #ff8a3d 82%, #ffb347);
+}
+
+.paper-backing {
+  background: rgb(239 236 230 / 0.88);
+}

@@ -18,7 +18,6 @@ Talent Lens is an AI hiring platform for recruiting teams. It parses resumes, ma
 10. [Git workflow](#git-workflow)
 11. [Troubleshooting](#troubleshooting)
 12. [Contributing](#contributing)
-13. [License](#license)
 
 ---
 
@@ -357,7 +356,3 @@ Frontend image: `node:20-alpine`, `NEXT_PUBLIC_API_BASE_URL` as a **build arg**,
 1. Fork or branch from `main`.
 2. Keep secrets out of git. Use `.env.example` only.
 3. Run `py -3 -m pytest` in `backend/` before opening a PR.
-
-## License
-
-MIT. See [LICENSE](LICENSE).
